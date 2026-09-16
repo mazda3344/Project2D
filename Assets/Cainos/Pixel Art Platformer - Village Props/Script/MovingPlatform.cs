@@ -42,6 +42,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
                 if (onPlatformObjects.Contains(collision.transform)) return;
 
                 onPlatformObjects.Add(collision.transform);
+                Debug.Log("11");
                 if (collision.attachedRigidbody) collision.attachedRigidbody.velocity -= velocity * velocityInheritPercent;
             }
         }
