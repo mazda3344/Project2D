@@ -3,7 +3,7 @@ using UnityEngine;
 public class SliderPlatform : MonoBehaviour {
     [SerializeField] private bool useColliders;
     [SerializeField] private Collider2D topCollider, bottomCollider;
-    [SerializeField, Range(0.01f, 2f)] private float motorSpeed = 1f;
+    [SerializeField, Range(0.01f, 10f)] private float motorSpeed = 1f;
     [SerializeField] private SliderJoint2D sliderJoint2D;
 
     private void Start() {
