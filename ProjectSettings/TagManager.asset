@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PointPlatform1
   - PointPlatform2
+  - Strela
   layers:
   - Default
   - TransparentFX
