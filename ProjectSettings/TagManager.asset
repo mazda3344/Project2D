@@ -7,6 +7,9 @@ TagManager:
   - PointPlatform1
   - PointPlatform2
   - Strela
+  - delete
+  - ctyl
+  - antyctyl
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - wooden t.
   - rock save
   - player
-  - 
-  - 
+  - antyctyl
+  - ctyl
   - 
   - 
   - 
