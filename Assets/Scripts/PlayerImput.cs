@@ -11,9 +11,10 @@ public class PlayerImput : MonoBehaviour
 
     private void Update()
     {
-        float horizontalDirection =Input.GetAxisRaw(GlobalStringVars.HORIZONTAL_AXIS);
+        float horizontalDirection =Input.GetAxis(GlobalStringVars.HORIZONTAL_AXIS);
         bool isJumpButtobPressed = Input.GetButtonDown(GlobalStringVars.JUMP_BUTTON);
+        Debug.Log(horizontalDirection);
 
-        playerMovement.Move();
+        playerMovement.Move(horizontalDirection, isJumpButtobPressed);
     }
 }
