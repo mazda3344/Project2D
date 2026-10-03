@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
         if (isJumpButtobPressed)
         Jump();
 
-        if(direction != 0)
-        HorizontalMovement(direction);
+        if(Mathf.Abs(direction) > 0.01f)
+            HorizontalMovement(direction);
     }
     private void Jump()
     {
@@ -41,6 +41,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HorizontalMovement(float direction)
     {
-        rb.velocity = new Vector2(direction * speed,rb.velocity.y);
+        rb.velocity = new Vector2(curve.Evaluate(direction), rb.velocity.y);
     }
 }
