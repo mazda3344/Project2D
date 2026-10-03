@@ -9,6 +9,7 @@ public class GlobalStringVars : MonoBehaviour
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VARTICAL_AXIS = "Vertical";
     public const string JUMP_BUTTON = "Jump";
+    public const string FIRE_1 = "Fire1";
 
     #endregion
 }

@@ -10,6 +10,7 @@ TagManager:
   - delete
   - ctyl
   - antyctyl
+  - Damageable
   layers:
   - Default
   - TransparentFX

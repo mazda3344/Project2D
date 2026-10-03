@@ -1,10 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Heath : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     private float currentHealth;
     private bool isAlive;
+    public Image HP;
 
     private void Awake()
     {
@@ -25,4 +28,11 @@ public class Heath : MonoBehaviour
         else
             isAlive = false;
     }
+
+    void Update()
+    {
+        HP.fillAmount = currentHealth / maxHealth;
+
+    }
+    
 }
