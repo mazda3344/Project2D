@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Shooter))]
 public class PlayerImput : MonoBehaviour

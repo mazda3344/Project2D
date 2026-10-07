@@ -126,9 +126,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_0
       rect:
         serializedVersion: 2
-        x: 42
+        x: 36
         y: 20
-        width: 30
+        width: 31
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -147,9 +147,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 127
         y: 20
-        width: 30
+        width: 38
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -168,9 +168,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_2
       rect:
         serializedVersion: 2
-        x: 236
+        x: 222
         y: 20
-        width: 30
+        width: 41
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_3
       rect:
         serializedVersion: 2
-        x: 331
+        x: 319
         y: 20
-        width: 30
+        width: 42
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_4
       rect:
         serializedVersion: 2
-        x: 426
+        x: 416
         y: 20
-        width: 30
+        width: 40
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -231,9 +231,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_5
       rect:
         serializedVersion: 2
-        x: 524
+        x: 509
         y: 20
-        width: 30
+        width: 45
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_6
       rect:
         serializedVersion: 2
-        x: 618
+        x: 606
         y: 20
-        width: 30
+        width: 42
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -273,9 +273,9 @@ TextureImporter:
       name: noBKG_KnightRun_strip_7
       rect:
         serializedVersion: 2
-        x: 713
+        x: 706
         y: 20
-        width: 30
+        width: 37
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -309,6 +309,7 @@ TextureImporter:
       noBKG_KnightRun_strip_5: -372960815
       noBKG_KnightRun_strip_6: -172460874
       noBKG_KnightRun_strip_7: -1169390857
+      noBKG_KnightRun_strip_8: 695900403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

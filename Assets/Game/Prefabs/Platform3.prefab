@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7659046299420748318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5639181531188857077}
   - component: {fileID: 8956393549756086573}
   - component: {fileID: 1920142209245055524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TX Tileset Ground_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 5626261157635338376}
   - component: {fileID: 431352424043064824}
   - component: {fileID: 4762180936839890448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TX Tileset Ground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 4965676164080221601}
   - component: {fileID: 5231555029597716371}
   - component: {fileID: 1139809631883581734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TX Tileset Ground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

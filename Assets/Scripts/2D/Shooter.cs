@@ -1,21 +1,56 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts.PlayerControl;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float fireSpeed;
-    [SerializeField] private Transform firePoint;
-
-    public void Shoot(float direction)
+    [SerializeField] private Transform firePoint1, firePoint2;
+    private Transform lastShootPoint;
+    private float lastShootDirection;
+    
+    private AnimatorController animatorController;
+    private void Awake()
     {
-        GameObject currentBullet = Instantiate(bullet, firePoint.position, Quaternion.identity);
-        Rigidbody2D currentBulletVelocity = currentBullet.GetComponent<Rigidbody2D>();
+        animatorController = GetComponent<AnimatorController>();
+    }
 
-        if(direction >= 0)
-            currentBulletVelocity.velocity = new Vector2(fireSpeed* 1, currentBulletVelocity.velocity.y);
-        else
-            currentBulletVelocity.velocity = new Vector2(fireSpeed* -1, currentBulletVelocity.velocity.y);
+    private void Start() 
+        {
+            ChangeDirection(1);
+        }
+
+    public void ChangeDirection(float direction) 
+    {
+            if (Mathf.Abs(direction) > 0.01f) 
+            {
+                if (direction > 0) 
+                {
+                    lastShootPoint = firePoint1;
+                    lastShootDirection = 1;
+                } else 
+                {
+                    lastShootPoint = firePoint2;
+                    lastShootDirection = -1;
+                }
+            }
+    }
+
+    public void Shoot() 
+    {
+        GameObject currentBullet = Instantiate(bullet);
+        currentBullet.tag = gameObject.tag;
+        Rigidbody2D currentBulletRigidbody2D = currentBullet.GetComponent<Rigidbody2D>();
+        currentBullet.transform.position = lastShootPoint.position;
+        currentBulletRigidbody2D.velocity = new Vector2(fireSpeed * lastShootDirection, currentBulletRigidbody2D.velocity.y);
+        animatorController.Attack();
+    }
+
+    public void Shoot(float value)
+    {
+        Debug.Log("Shooter::Shoot(); -- value:" + value);
     }
 }

@@ -126,9 +126,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_0
       rect:
         serializedVersion: 2
-        x: 39
+        x: 35
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -147,9 +147,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_1
       rect:
         serializedVersion: 2
-        x: 135
+        x: 131
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -168,9 +168,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_2
       rect:
         serializedVersion: 2
-        x: 231
+        x: 227
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_3
       rect:
         serializedVersion: 2
-        x: 327
+        x: 323
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_4
       rect:
         serializedVersion: 2
-        x: 423
+        x: 419
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -231,9 +231,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_5
       rect:
         serializedVersion: 2
-        x: 518
+        x: 514
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_6
       rect:
         serializedVersion: 2
-        x: 614
+        x: 610
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -273,9 +273,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_7
       rect:
         serializedVersion: 2
-        x: 710
+        x: 706
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -294,9 +294,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_8
       rect:
         serializedVersion: 2
-        x: 806
+        x: 802
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -315,9 +315,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_9
       rect:
         serializedVersion: 2
-        x: 902
+        x: 898
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -336,9 +336,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_10
       rect:
         serializedVersion: 2
-        x: 997
+        x: 993
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -357,9 +357,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_11
       rect:
         serializedVersion: 2
-        x: 1094
+        x: 1090
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -378,9 +378,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_12
       rect:
         serializedVersion: 2
-        x: 1190
+        x: 1186
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -399,9 +399,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_13
       rect:
         serializedVersion: 2
-        x: 1286
+        x: 1282
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -420,9 +420,9 @@ TextureImporter:
       name: noBKG_KnightDeath_strip_14
       rect:
         serializedVersion: 2
-        x: 1382
+        x: 1378
         y: 20
-        width: 30
+        width: 34
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
