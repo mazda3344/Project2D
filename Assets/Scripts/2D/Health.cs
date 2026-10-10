@@ -1,35 +1,41 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
-public class Health : MonoBehaviour
+using Game.Scripts.BattleScripts;
+namespace Game.Scripts.PlayerControl 
 {
-    [SerializeField] private float maxHealth;
-    private float currentHealth;
-    public UnityAction<float> HealthChanged;
-    private bool isAlive;
-
-    public bool IsAlive { get; internal set; }
-
-    private void Awake()
+    [RequireComponent(typeof(AnimatorController))]
+    public class Health : MonoBehaviour
     {
-        currentHealth = maxHealth;
-        isAlive = true;
-    }
+        [SerializeField] private float maxHealth;
+        private float currentHealth;
+        public UnityAction<float> HealthChanged;
+        private bool isAlive;
+        private AnimatorController animatorController;
 
-    public void TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        CheckIsAlive();
-        HealthChanged.Invoke(currentHealth);
-    }
+        public bool IsAlive { get; internal set; }
 
-    private void CheckIsAlive()
-    {
-        if(currentHealth > 0)
+        private void Awake()
+        {
+            currentHealth = maxHealth;
             isAlive = true;
-        else
-            isAlive = false;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealth -= damage;
+            CheckIsAlive();
+            HealthChanged.Invoke(currentHealth);
+        }
+
+        private void CheckIsAlive()
+        {
+            if(currentHealth > 0)
+                isAlive = true;
+            else
+                isAlive = false;
+                animatorController.Death();
+        }
+        
     }
-    
 }

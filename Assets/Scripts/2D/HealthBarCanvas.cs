@@ -7,20 +7,17 @@ namespace Game.Scripts.BattleScripts {
         [SerializeField] private Health health;
 
         private void Start() {
-            if (!health) 
-            {
+            if (!health) {
                 health = transform.parent.GetComponent<Health>();
             }
             health.HealthChanged += HealthChanged;
         }
 
-        private void HealthChanged(float currentHealth) 
-        {
+        private void HealthChanged(float currentHealth) {
             SetHealthFillAmount(currentHealth / health.MaxHealth);
         }
 
-        private void SetHealthFillAmount(float fillAmount) 
-        {
+        private void SetHealthFillAmount(float fillAmount) {
             healthImage.fillAmount = fillAmount;
         }
     }

@@ -2,25 +2,52 @@ using Game.Scripts.PlayerControl;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game.Scripts.BattleScripts {
-    [RequireComponent(typeof(AnimatorController))]
-    public class Health : MonoBehaviour {
+namespace Game.Scripts.BattleScripts 
+{
+    [RequireComponent(typeof(AnimatorController))] 
+    public class Health : MonoBehaviour 
+    {
+        [Header("Health Settings")]
         [SerializeField] private float maxHealth = 100f;
+        
         public float MaxHealth => maxHealth;
-        private float currentHealth;
         public float CurrentHealth => currentHealth;
-        public UnityAction<float> HealthChanged;
         public bool IsAlive => currentHealth > 0;
 
-        private void Start() {
-            // Debug.Log("Health::Start(); -- ");
+        private float currentHealth;
+        public UnityAction<float> HealthChanged;
+        public UnityAction OnDeath; 
+
+        private AnimatorController animator;
+
+        private void Awake()
+        {
+            animator = GetComponent<AnimatorController>();
+        }
+
+        private void Start() 
+        {
             currentHealth = maxHealth;
         }
 
-        public void TakeDamage(float damage) {
-            // Debug.Log("TakeDamage(); -- damage:" + damage + ",go:" + gameObject, gameObject);
-            currentHealth -= damage;
-            HealthChanged.Invoke(currentHealth);
+        public void TakeDamage(float damage) 
+        {
+            if (!IsAlive) return;
+            currentHealth = Mathf.Clamp(currentHealth - damage, 0f, maxHealth);
+            HealthChanged?.Invoke(currentHealth);
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            OnDeath?.Invoke();
+            if (TryGetComponent(out Collider2D col))
+            {
+                col.enabled = false;
+            }
         }
     }
 }

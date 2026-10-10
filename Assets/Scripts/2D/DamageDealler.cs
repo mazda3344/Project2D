@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealler : MonoBehaviour
+namespace Game.Scripts.PlayerControl 
 {
-    [SerializeField] private float damage;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    [RequireComponent(typeof(Health))]
+    public class DamageDealler : MonoBehaviour
     {
-        if (collision.CompareTag("Damageable"))
-        {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-        }
+        [SerializeField] private float damage;
 
-        Destroy(gameObject);
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Damageable"))
+            {
+                collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

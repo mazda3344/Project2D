@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace Game.Scripts.PlayerControl {
     [RequireComponent(typeof(Animator),
         typeof(SpriteRenderer))]

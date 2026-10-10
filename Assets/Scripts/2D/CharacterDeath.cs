@@ -1,28 +1,39 @@
 using Game.Scripts.BattleScripts;
-using Game.Scripts.PlayerControl;
 using UnityEngine;
 
-namespace Game.Scripts.PlayerControl {
-    public class CharacterDeath : MonoBehaviour {
+namespace Game.Scripts.PlayerControl 
+{
+    [RequireComponent(typeof(AnimatorController))] // Теперь этот атрибут логично держать здесь
+    public class CharacterDeath : MonoBehaviour 
+    {
         [SerializeField] protected Health health;
         private AnimatorController animatorController;
 
-        protected void Start() {
-            // Debug.Log("CharacterDeath::Start(); -- ");
-            if (!health) 
-            {
-                health = transform.GetComponent<Health>();
+        protected void Start() 
+        {
+            if (!health) {
+                health = GetComponent<Health>();
             }
             animatorController = GetComponent<AnimatorController>();
-            health.HealthChanged += HealthChanged;
+            
+            if (health != null) {
+                health.OnDeath += HandleDeath; // Подписываемся сразу на событие смерти
+            }
         }
 
-        private void HealthChanged(float currentHealth) {
-            if (!health.IsAlive) 
-            {
-                animatorController.Death();
-                Invoke(nameof(DestroyMe), 2f);
+        private void OnDestroy() 
+        {
+            if (health != null) {
+                health.OnDeath -= HandleDeath; // Защита от утечки памяти
             }
+        }
+
+        private void HandleDeath() 
+        {
+            if (animatorController != null) {
+                animatorController.Death();
+            }
+            Invoke(nameof(DestroyMe), 2f);
         }
 
         private void DestroyMe() 
@@ -31,3 +42,4 @@ namespace Game.Scripts.PlayerControl {
         }
     }
 }
+
