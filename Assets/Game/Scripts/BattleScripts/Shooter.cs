@@ -1,58 +1,35 @@
 using UnityEngine;
-
-namespace Game.Scripts.BattleScripts 
-{
-    public class Shooter : MonoBehaviour 
-    {
-        [Header("Prefabs & Physics")]
+namespace Game.Scripts.BattleScripts {
+    public class Shooter : MonoBehaviour {
         [SerializeField] private GameObject bullet;
         [SerializeField] private float fireSpeed = 20f;
-
-        [Header("Positions")]
-        [SerializeField] private Transform leftShootPoint;
-        [SerializeField] private Transform rightShootPoint;
-
+        [SerializeField] private Transform leftShootPoint, rightShootPoint;
         private Transform lastShootPoint;
         private float lastShootDirection;
 
-        private void Start() 
-        {
-            ChangeDirection(1f);
+        private void Start() {
+            ChangeDirection(1);
         }
 
-        public void ChangeDirection(float direction) 
-        {
-            if (Mathf.Approximately(direction, 0f)) return;
-
-            if (direction > 0) 
-            {
-                lastShootPoint = rightShootPoint;
-                lastShootDirection = 1f;
-            } 
-            else 
-            {
-                lastShootPoint = leftShootPoint;
-                lastShootDirection = -1f;
+        public void ChangeDirection(float direction) {
+            if (Mathf.Abs(direction) > 0.01f) {
+                if (direction > 0) {
+                    lastShootPoint = rightShootPoint;
+                    lastShootDirection = 1;
+                } else {
+                    lastShootPoint = leftShootPoint;
+                    lastShootDirection = -1;
+                }
             }
         }
 
-        public void Shoot() 
-        {
-            if (bullet == null)
-            {
-                return;
-            }
-            if (lastShootPoint == null)
-            {
-                lastShootPoint = rightShootPoint != null ? rightShootPoint : transform;
-                lastShootDirection = 1f;
-            }
-            GameObject currentBullet = Instantiate(bullet, lastShootPoint.position, Quaternion.identity);
+        public void Shoot() {
+            // Debug.Log("Shooter::Shoot(); -- ");
+            GameObject currentBullet = Instantiate(bullet);
             currentBullet.tag = gameObject.tag;
-            if (currentBullet.TryGetComponent(out Rigidbody2D rb)) 
-            {
-                rb.velocity = new Vector2(fireSpeed * lastShootDirection, 0f);
-            }
+            Rigidbody2D currentBulletRigidbody2D = currentBullet.GetComponent<Rigidbody2D>();
+            currentBullet.transform.position = lastShootPoint.position;
+            currentBulletRigidbody2D.velocity = new Vector2(fireSpeed * lastShootDirection, currentBulletRigidbody2D.velocity.y);
         }
     }
 }

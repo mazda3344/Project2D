@@ -1,41 +1,53 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using Game.Scripts.BattleScripts;
+
 namespace Game.Scripts.PlayerControl 
 {
-    [RequireComponent(typeof(AnimatorController))]
-    public class Health : MonoBehaviour
+    public class Health : MonoBehaviour 
     {
-        [SerializeField] private float maxHealth;
+        
+        [Header("Health Settings")]
+        [SerializeField] private float maxHealth = 100f;
+        
+        public float MaxHealth => maxHealth;
+        public float CurrentHealth => currentHealth;
+        public bool IsAlive => currentHealth > 0;
+
         private float currentHealth;
         public UnityAction<float> HealthChanged;
-        private bool isAlive;
-        private AnimatorController animatorController;
+        public UnityAction OnDeath; 
 
-        public bool IsAlive { get; internal set; }
+        private AnimatorController animator;
 
         private void Awake()
         {
+            animator = GetComponent<AnimatorController>();
+        }
+
+        private void Start() 
+        {
             currentHealth = maxHealth;
-            isAlive = true;
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(float damage) 
         {
-            currentHealth -= damage;
-            CheckIsAlive();
-            HealthChanged.Invoke(currentHealth);
+            if (!IsAlive) return;
+            currentHealth = Mathf.Clamp(currentHealth - damage, 0f, maxHealth);
+            HealthChanged?.Invoke(currentHealth);
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
 
-        private void CheckIsAlive()
+        private void Die()
         {
-            if(currentHealth > 0)
-                isAlive = true;
-            else
-                isAlive = false;
-                animatorController.Death();
+            OnDeath?.Invoke();
+            if (TryGetComponent(out Collider2D col))
+            {
+                col.enabled = false;
+            }
         }
-        
     }
 }
+
