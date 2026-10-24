@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SliderJoint2D))]
 public class SliderPlatform : MonoBehaviour {
-    [SerializeField, Range(0.01f, 2f)] private float motorSpeed = 1f;
+    [SerializeField, Range(0.01f, 10f)] private float motorSpeed = 1f;
     [SerializeField] private SliderJoint2D sliderJoint2D;
 
     private void Start() {

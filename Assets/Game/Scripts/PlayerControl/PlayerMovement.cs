@@ -21,7 +21,12 @@ namespace Game.Scripts.PlayerControl {
             animatorController = GetComponent<AnimatorController>();
         }
 
+        void Update()
+        {
+            Debug.Log("PlayerMovement::Update(); -- enabled:" + enabled);
+        }
         private void FixedUpdate() {
+            Debug.Log("PlayerMovement::FixedUpdate(); -- enabled:" + enabled);
             Vector3 overlapCirclePosition = legsCircleCollider2D.bounds.center;
             float overlapRadius = legsCircleCollider2D.radius + jumpOffset;
             isGrounded = Physics2D.OverlapCircle(overlapCirclePosition, overlapRadius, groundLayerMask);
